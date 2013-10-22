@@ -1,2 +1,9 @@
 logs/
 lib/
+/.target
+/project
+/target
+
+/.project
+/.classpath
+/.settings
