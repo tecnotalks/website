@@ -5,6 +5,7 @@ notifications:
 script: sbt test
 deploy: 
   provider: heroku
+  app: tecnotalks
   api_key: 
     secure: qkWppBTqfXMMhaJimju+x5ELxy7A1mheoDOd0qWcQ3p0VQ0eVwScYD/ci91k7VSzF5XoUoIyOxHgZuWc8CULKnlM4MLU32hySgHi/9hfoXI9ZqDlxDCSf3nl58zK3V9g3cX7Fw0AsBEm75nO6uF6fZXKO/GWDy855FmYaBhlyeg=
 scala: 
