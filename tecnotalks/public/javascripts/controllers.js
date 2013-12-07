@@ -2,16 +2,17 @@
 
 /* Controllers */
 
-angular.module('tecnotalksSite.controllers', []).
-  controller('MyCtrl1', [function() {
+angular.module('tecnotalksSite.controllers', [])
+  .controller('EventEditController', ['$scope',function($scope) {
+
+  	$scope.event = {};
 
   }])
-  .controller('EventEditController', [function() {
+  .controller('RegistroCtrl', ['$scope','RegisterService', function($scope, RegisterService) {
 
-  	//vai la e salva
-
-  	addEvent = function () {
-  		
-  	}
+    $scope.user = {};
+    $scope.save = function(user) {
+        RegisterService.save(user);
+    }
 
   }]);
