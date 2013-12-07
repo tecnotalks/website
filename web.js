@@ -2,6 +2,7 @@
 var express = require("express");
 var logfmt = require("logfmt");
 var app = express();
+var EventProvider = require("./eventprovider-mongodb").EventProvider;
 
 app.use(logfmt.requestLogger());
 
