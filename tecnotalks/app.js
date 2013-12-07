@@ -35,17 +35,6 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-
-app.post('/event/new', function(req, res){
-    articleProvider.save({
-        title: req.param('title'),
-        body: req.param('body')
-    }, function( error, docs) {
-        res.redirect('/')
-    });
-});
-
-
 app.get('/', routes.index);
 app.get('/users', user.list);
 

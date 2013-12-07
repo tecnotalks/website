@@ -10,6 +10,16 @@ angular.module('tecnotalksSite.services', []).
         }
     }
 
+  }]).
+   factory('EventService', ['Restangular', function(Restangular) {
+
+    return{
+        save:function (event){
+            Restangular.all('services/event/save').post(event);
+
+        }
+    }
+
   }]);
 
   //service/event/save

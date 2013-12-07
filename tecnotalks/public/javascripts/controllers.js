@@ -3,9 +3,12 @@
 /* Controllers */
 
 angular.module('tecnotalksSite.controllers', [])
-  .controller('EventEditController', ['$scope',function($scope) {
+  .controller('EventEditController', ['$scope','EventService', function($scope, EventService) {
 
   	$scope.event = {};
+  	$scope.save = function(event) {
+        EventService.save(event);
+    }
 
   }])
   .controller('RegistroCtrl', ['$scope','RegisterService', function($scope, RegisterService) {
