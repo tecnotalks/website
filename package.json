@@ -4,7 +4,8 @@
   "description": "Site do Tecnotalks",
   "main": "web.js",
   "dependencies": {
-    "express": "3.x"
+    "express": "3.x",
+    "logfmt" : "0.17.0"
   },
 
   "repository": {
