@@ -45,6 +45,11 @@ app.get('/services/events/list', function(req, res){
         });
     });
 
+app.post('/services/events/save', function(req, res){
+    eventProvider.save( req.body, function(events){
+    		res.send(events)
+    	});
+    });
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
