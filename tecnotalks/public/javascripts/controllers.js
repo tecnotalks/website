@@ -2,8 +2,10 @@
 
 /* Controllers */
 
-angular.module('tecnotalksSite.controllers', []).
-  controller('MyCtrl1', [function() {
+angular.module('tecnotalksSite.controllers', [])
+  .controller('EventEditController', ['$scope',function($scope) {
+
+  	$scope.event = {};
 
   }])
   .controller('RegistroCtrl', ['$scope','RegisterService', function($scope, RegisterService) {
@@ -12,8 +14,5 @@ angular.module('tecnotalksSite.controllers', []).
     $scope.save = function(user) {
         RegisterService.save(user);
     }
-
-  }])
-  .controller('MyCtrl2', [function() {
 
   }]);

@@ -9,10 +9,10 @@ angular.module('tecnotalksSite', [
   'restangular'
 ]).
 config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
-  $routeProvider.when('/agenda', {templateUrl: '/views/agenda.html', controller: 'MyCtrl1'});
+  $routeProvider.when('/agenda', {templateUrl: '/views/agenda.html'});
+  $routeProvider.when('/evento/novo', {templateUrl: '/views/newAgenda.html', controller: 'EventEditController'});
   $routeProvider.when('/registro', {templateUrl: '/views/registro.html', controller: 'RegistroCtrl'});
-  $routeProvider.when('/sugestoes', {templateUrl: '/views/sugestoes.html', controller: 'MyCtrl2'});
-  $routeProvider.otherwise({redirectTo: '/'});
+  $routeProvider.when('/sugestoes', {templateUrl: '/views/sugestoes.html'});
 
   $locationProvider.html5Mode(true);
 
