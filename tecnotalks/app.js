@@ -8,6 +8,7 @@ var routes = require('./routes');
 var user = require('./routes/user');
 var http = require('http');
 var path = require('path');
+var EventProvider = require("./eventprovider-mongodb").EventProvider;
 
 var app = express();
 
@@ -27,6 +28,8 @@ app.get('/', function(req, res) {
 	return res.render('index.html');
 });
 
+var eventProvider = new EventProvider('localhost', 27017);
+
 // development only
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());
@@ -45,6 +48,14 @@ app.post('/event/new', function(req, res){
 
 app.get('/', routes.index);
 app.get('/users', user.list);
+
+/* Listar eventos */
+app.get('/services/events/list', function(req, res){
+    eventProvider.findAll( function(error,docs){
+        	res.send(docs)
+        });
+    });
+
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
