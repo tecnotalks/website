@@ -1,0 +1,20 @@
+<div class="container" >
+	<div class="row">
+		<div class="col-xs-7">
+			<div class="page-header">
+				<h1> form de agenda</h1>
+			</div>	
+			<form role="form">
+			  <div class="form-group">
+			    <label for="inputTitleEvent">Titulo Evento</label>
+			    <input type="text" class="form-control" ng-model="event.title" id="inputTitleEvent" >
+			  </div>
+			  <button ng-click="save(event)" class="btn btn-success">Enviar</button>
+			</form>
+			<pre>form = {{event | json}}</pre>
+			
+		</div>	
+  	</div>
+</div>
+
+
