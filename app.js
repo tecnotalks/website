@@ -48,6 +48,10 @@ app.get('/services/events/list', function(req, res){
         });
     });
 
+app.post('/services/events/save', function(req, res){
+    eventProvider.save( req.body, function(events){res.send(events);});
+    });
+
 /* Salvar usuaro */
 app.post('/services/user/save', function(req, res){
         userProvider.save(req.body, function(users){res.send(users);});
@@ -59,8 +63,6 @@ app.get('/services/user/list', function(req, res){
             res.send(docs)
         });
     });
-
-
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
