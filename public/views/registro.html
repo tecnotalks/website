@@ -12,6 +12,15 @@
     <label for="inputPassword">Password</label>
     <input type="password" class="form-control" id="inputPassword" placeholder="Digite a sua senha" ng-model="user.password">
   </div>
+  <div class="form-group">
+    <label for="inputPassword">Confirm Password</label>
+    <input type="password" class="form-control" id="inputConfirmPassword" placeholder="Digite novamente a sua senha" ng-model="user.confirmPassword">
+  </div>
+  <div ng-show="error">
+    <div class="well alert alert-danger">
+      <span >{{message}}</span>
+    </div>
+  </div>
   <button type="submit" class="btn btn-default" ng-click="save(user)">Submit</button>
   <pre>{{ user | json }}</pre>
 </form>

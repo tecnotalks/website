@@ -15,7 +15,17 @@ angular.module('tecnotalksSite.services', []).
 
     return{
         save:function (event){
-            Restangular.all('services/event/save').post(event);
+          console.log(event);
+          
+            Restangular.all('services/event/save').post(event).then(
+              function(dataSuccess) {
+                console.log(dataSuccess);
+                //tem que dar mensagem de sucesso pro usuario
+              },
+              function(dataError) {
+                console.log(dataError);
+                // tem que botar o foco do cursor no campo senha :D e avisar o cara :P
+              });
 
         }
     }
@@ -23,5 +33,3 @@ angular.module('tecnotalksSite.services', []).
   }]);
 
   //service/event/save
-
-  
