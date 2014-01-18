@@ -7,6 +7,9 @@ angular.module('tecnotalksSite.controllers', [])
 
   	$scope.event = {};
   	$scope.save = function(event) {
+      console.log("antes do bla");
+      return {status: "bla"};
+      console.log("depois do bla");
         EventService.save(event);
     }
 

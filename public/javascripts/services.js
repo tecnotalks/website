@@ -15,7 +15,13 @@ angular.module('tecnotalksSite.services', []).
 
     return{
         save:function (event){
-            Restangular.all('services/event/save').post(event);
+            Restangular.all('services/event/save').post(event).then(
+              function(dataSuccess) {
+                console.log(dataSuccess);
+              },
+              function(dataError) {
+                console.log(dataError);
+              });
 
         }
     }
