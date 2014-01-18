@@ -12,7 +12,7 @@ angular.module('tecnotalksSite', [
 ]).
 config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
   $routeProvider.when('/', {templateUrl: '/views/dashboard.html'});
-  $routeProvider.when('/agenda', {templateUrl: '/views/agenda.html'});
+  $routeProvider.when('/agenda', {templateUrl: '/views/agenda.html', controller: 'EventEditController'});
   $routeProvider.when('/evento/novo', {templateUrl: '/views/newAgenda.html', controller: 'EventEditController'});
   $routeProvider.when('/registro', {templateUrl: '/views/registro.html', controller: 'RegistroCtrl'});
   $routeProvider.when('/login', {templateUrl: '/views/login.html', controller: 'LoginCrtl'});

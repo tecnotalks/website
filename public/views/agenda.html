@@ -1,6 +1,13 @@
-<div ng-controller="EventEditController">
+<div class="container">
+    <div ng-controller="EventEditController">
 
-	<a href="/evento/novo">Novo Evento</a>
+    	<a class="btn btn-primary" href="/evento/novo" role="button">Novo Evento</a>
 
-
+        <h2>Eventos</h2>
+        <ul class="list-group">
+            <li ng-repeat="event in events" class="list-group-item">
+                {{event.title}} | {{event.date | date:'d/MM/yyyy HH:mm' }}
+            </li>
+        </ul>
+    </div>
 </div>

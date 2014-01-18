@@ -5,9 +5,23 @@
 angular.module('tecnotalksSite.controllers', [])
   .controller('EventEditController', ['$scope','EventService', function($scope, EventService) {
 
-          $scope.event = {};
-          $scope.save = function(event) {
-        EventService.save(event);
+    $scope.event = {};
+    // $scope.events = EventService.list();
+    EventService.list(function(data) {
+      $scope.events = data;
+    });
+    $scope.save = function(event) {
+        EventService.save(event, 
+          function(data) {
+            $scope.success = true;    
+            $scope.message = "Evento criado com sucesso! ";
+          },
+          function(data) {
+            $scope.error = true;    
+            $scope.message = "Algum problema ocorreu :p ! ";
+          });
+        
+        return;
     }
 
   }])
