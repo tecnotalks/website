@@ -6,7 +6,8 @@ angular.module('tecnotalksSite', [
   'ngRoute',
   'tecnotalksSite.services',
   'tecnotalksSite.controllers',
-  'restangular'
+  'restangular',
+  'ui.bootstrap'
 ]).
 config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
   $routeProvider.when('/', {templateUrl: '/views/dashboard.html'});
