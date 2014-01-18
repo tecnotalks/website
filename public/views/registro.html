@@ -1,5 +1,5 @@
 <div class="container">
-<form role="form">
+<form role="form" name="form">
   <div class="form-group">
     <label for="inputName">Nome</label>
     <input type="text" class="form-control" id="inputName" placeholder="Digite o seu nome" ng-model="user.name">
@@ -18,6 +18,11 @@
   </div>
   <div ng-show="error">
     <div class="well alert alert-danger">
+      <span >{{message}}</span>
+    </div>
+  </div>
+  <div ng-show="success">
+    <div class="well alert alert-info">
       <span >{{message}}</span>
     </div>
   </div>

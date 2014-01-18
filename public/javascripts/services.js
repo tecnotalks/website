@@ -4,10 +4,24 @@ angular.module('tecnotalksSite.services', []).
   factory('RegisterService', ['Restangular', function(Restangular) {
 
     return{
-        save:function (user){
-            Restangular.all('services/user/save').post(user);
-
+        save:function (user, onSuccess, onError){
+            Restangular.all('services/user/save').post(user).then(
+              function(dataSuccess) {
+                onSuccess.call(null, {status: true, message: "Usuário salvo com sucesso!"});
+              },
+              function(dataError) {
+                onError.call(null, {status: false, message: "Usuário não foi salvo!"});
+              });
+        },
+        attemptLogin: function(credentials, onSuccess, onError){
+          Restangular.all('services/user/login').post(credentials).then(
+            function(dataSuccess){
+              onSuccess.call(null, {status: true, message:"Usuário logado!"});
+          },function(dataError){
+            onError.call(null, {status: true, message:"Email ou Senha inválidos"});
+          }); 
         }
+        
     }
 
   }]).
@@ -16,17 +30,8 @@ angular.module('tecnotalksSite.services', []).
     return{
         save:function (event){
           console.log(event);
-          
-            Restangular.all('services/event/save').post(event).then(
-              function(dataSuccess) {
-                console.log(dataSuccess);
-                //tem que dar mensagem de sucesso pro usuario
-              },
-              function(dataError) {
-                console.log(dataError);
-                // tem que botar o foco do cursor no campo senha :D e avisar o cara :P
-              });
 
+            Restangular.all('services/event/save').post(event);
         }
     }
 

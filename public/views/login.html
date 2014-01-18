@@ -1,0 +1,19 @@
+<div class="container">
+<form role="form" name="form">
+  <div class="form-group">
+    <label for="inputName">Email</label>
+    <input type="email" class="form-control" id="inputEmail" placeholder="Digite o seu email" ng-model="credentials.email">
+  </div>
+  <div class="form-group">
+    <label for="inputEmail">Password</label>
+    <input type="password" class="form-control" id="inputPassword" placeholder="Password" ng-model="credentials.password">
+  </div>
+    <div ng-show="error">
+    <div class="well alert alert-danger">
+      <span >{{message}}</span>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-default" ng-click="attemptLogin(credentials)">Submit</button>
+  <pre>{{ credentials | json }}</pre>
+</form>
+</div>

@@ -25,7 +25,29 @@ angular.module('tecnotalksSite.controllers', [])
         user.password = md5.createHash(user.password);
         delete user.confirmPassword;
 
-        RegisterService.save(user);
+        RegisterService.save(user, function(data){
+          $scope.success = true;
+          $scope.message = data.message;
+          $scope.user = {};
+        },
+        function(data){
+          $scope.error = true;
+          $scope.message = data.message;
+        }
+        );
+
     }
 
+  }]).controller('LoginCrtl',['$scope','RegisterService','md5', function($scope, RegisterService, md5) {
+
+    $scope.credentials = {};
+    $scope.attemptLogin = function(credentials) {
+      RegisterService.attemptLogin({email : credentials.email, password : md5.createHash(credentials.password)}
+        function(){
+          console.log('certo');
+        },
+        function(){
+          console.log('erro');
+        });
+    }
   }]);

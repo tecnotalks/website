@@ -64,6 +64,13 @@ app.get('/services/user/list', function(req, res){
         });
     });
 
+/* Attempt Login */
+app.post('/services/user/login', function(req, res){
+    userProvider.getUserByEamilAndPasword(req.body.email, req.body.password , function(error, docs){
+        res.send(docs);
+    });
+})
+
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });

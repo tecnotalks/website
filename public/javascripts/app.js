@@ -15,6 +15,7 @@ config(['$routeProvider', '$locationProvider', function($routeProvider, $locatio
   $routeProvider.when('/agenda', {templateUrl: '/views/agenda.html'});
   $routeProvider.when('/evento/novo', {templateUrl: '/views/newAgenda.html', controller: 'EventEditController'});
   $routeProvider.when('/registro', {templateUrl: '/views/registro.html', controller: 'RegistroCtrl'});
+  $routeProvider.when('/login', {templateUrl: '/views/login.html', controller: 'LoginCrtl'});
   $routeProvider.when('/sugestoes', {templateUrl: '/views/sugestoes.html'});
   $routeProvider.otherwise({redirectTo: '/'});
 

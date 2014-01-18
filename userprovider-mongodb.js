@@ -48,4 +48,17 @@ UserProvider.prototype.save = function(users, callback) {
     });
 };
 
+
+UserProvider.prototype.getUserByEmailAndPassword = function(email, password ,callback) {
+    this.getCollection(function(error, user_collection) {
+      if( error ) callback(error)
+      else {
+        user_collection.find({email: email, password: password}).toArray(function(error, results) {
+          if( error ) callback(error)
+          else callback(null, results)
+        });
+      }
+    });
+};
+
 exports.UserProvider = UserProvider;
