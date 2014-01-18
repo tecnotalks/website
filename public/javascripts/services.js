@@ -23,6 +23,11 @@ angular.module('tecnotalksSite.services', []).
               function(data) {
                 onError(data);
               });
+        },
+        list: function(onSuccess) {
+            Restangular.one('services/events/list').get().then(function(data) {
+              onSuccess(data);
+            });
         }
     }
 

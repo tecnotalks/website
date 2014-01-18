@@ -2,5 +2,10 @@
 
 	<a href="/evento/novo">Novo Evento</a>
 
-
+    <h2>Eventos</h2>
+    <ul>
+        <li ng-repeat="event in events">
+            {{event.title}}
+        </li>
+    </ul>
 </div>

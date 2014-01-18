@@ -6,6 +6,10 @@ angular.module('tecnotalksSite.controllers', [])
   .controller('EventEditController', ['$scope','EventService', function($scope, EventService) {
 
     $scope.event = {};
+    // $scope.events = EventService.list();
+    EventService.list(function(data) {
+      $scope.events = data;
+    });
     $scope.save = function(event) {
         EventService.save(event, 
           function(data) {
