@@ -8,6 +8,10 @@
 			  <div class="form-group">
 			    <label for="inputTitleEvent">Titulo Evento</label>
 			    <input type="text" class="form-control" ng-model="event.title" id="inputTitleEvent" >
+			    <label for="inputDateEvent">Data Evento</label>
+			    <div ng-model="event.date">
+				    <datepicker id="inputDateEvent" type="text" />
+				</div>
 			  </div>
 			  <button ng-click="save(event)" class="btn btn-success">Enviar</button>
 			</form>
