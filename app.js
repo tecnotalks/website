@@ -48,9 +48,9 @@ app.get('/services/events/list', function(req, res){
         });
     });
 
-app.post('/services/events/save', function(req, res){
+app.post('/services/event/save', function(req, res){
     eventProvider.save( req.body, function(events){res.send(events);});
-    });
+});
 
 /* Salvar usuaro */
 app.post('/services/user/save', function(req, res){
