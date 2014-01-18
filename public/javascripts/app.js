@@ -6,6 +6,7 @@ angular.module('tecnotalksSite', [
   'ngRoute',
   'tecnotalksSite.services',
   'tecnotalksSite.controllers',
+  'angular-md5',
   'restangular',
   'ui.bootstrap'
 ]).

@@ -17,6 +17,11 @@
 				    <datepicker id="inputDateEvent" type="text" />
 				</div>
 			  </div>
+				<div ng-show="success">
+				    <div class="well alert alert-success">
+				      <span >{{message}}</span>
+				    </div>
+				  </div>			  
 			  <button ng-click="save(event)" class="btn btn-success">Enviar</button>
 			</form>
 			<pre>form = {{event | json}}</pre>
